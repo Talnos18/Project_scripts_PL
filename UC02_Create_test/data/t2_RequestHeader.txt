@@ -1,0 +1,18 @@
+POST /auth-srv/login HTTP/1.1
+Host: dev-boomq.pflb.ru
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0
+Accept: */*
+Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+X-Client-Date: 2024-04-06T07:11:24.316Z
+Content-Type: multipart/form-data; boundary=---------------------------365814406120635862901947345310
+Content-Length: 441
+Origin: https://dev-boomq.pflb.ru
+DNT: 1
+Sec-GPC: 1
+Connection: keep-alive
+Referer: https://dev-boomq.pflb.ru/authorize
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+

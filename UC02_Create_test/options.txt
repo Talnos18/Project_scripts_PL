@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\Илья\Documents\SharpDevelop Projects\UC02_Create_test
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\users\илья\documents\sharpdevelop projects\uc02_create_test\\logfile.log
+c:\users\илья\documents\sharpdevelop projects\uc02_create_test\\combined_UC02_Create_test.c
+c:\users\илья\documents\sharpdevelop projects\uc02_create_test\\pre_cci.c

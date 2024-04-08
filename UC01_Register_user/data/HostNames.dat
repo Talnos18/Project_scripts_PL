@@ -1,0 +1,5 @@
+[hosts]
+dev-boomq.pflb.ru=
+safebrowsing.googleapis.com=
+ocsp.globalsign.com=
+worldtimeapi.org=

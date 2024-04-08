@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\Илья\Documents\SharpDevelop Projects\UC01_Register_user
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\users\илья\documents\sharpdevelop projects\uc01_register_user\\logfile.log
+c:\users\илья\documents\sharpdevelop projects\uc01_register_user\\combined_UC01_Register_user.c
+c:\users\илья\documents\sharpdevelop projects\uc01_register_user\\pre_cci.c
