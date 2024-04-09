@@ -1,6 +1,6 @@
 [t3]
 FileName2=t2_8_en.UNK
-RawStepEndTime=1712489301408
+RawStepEndTime=1712679705265
 FileName5=t1_5_Montserrat-Medium.UNK
 FileName4=t1_6_Montserrat-Bold.UNK
 FileName7=t1_3_loading.UNK
@@ -25,7 +25,7 @@ URL9=https://dev-boomq.pflb.ru/static/css/main.64a4c65b.css
 SnapshotXmlFile=snapshot_3.xml
 RequestHeaderFile=t3_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1712489301382
+RawStepStartTime=1712679705241
 Total=10
 StepName=Url: config.json
 FileName1=t3.json

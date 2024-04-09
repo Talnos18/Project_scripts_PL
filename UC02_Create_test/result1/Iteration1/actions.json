@@ -6,95 +6,95 @@
                 "stepId": "STEP1",
                 "stepName": "Url: dev-boomq.pflb.ru",
                 "infFile": "t1.inf",
-                "time": 1712489301052
+                "time": 1712679704948
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Submit Data: login",
                 "infFile": "t2.inf",
-                "time": 1712489301368
+                "time": 1712679705239
             },
             {
                 "stepId": "STEP3",
                 "stepName": "Url: config.json",
                 "infFile": "t3.inf",
-                "time": 1712489301413
+                "time": 1712679705269
             },
             {
                 "stepId": "STEP4",
                 "stepName": "Url: modelSchema",
                 "infFile": "t4.inf",
-                "time": 1712489301500
+                "time": 1712679705362
             },
             {
                 "stepId": "STEP5",
                 "stepName": "Url: user",
                 "infFile": "t6.inf",
-                "time": 1712489301570
+                "time": 1712679705433
             },
             {
                 "stepId": "STEP6",
                 "stepName": "Url: identityProvider",
                 "infFile": "t7.inf",
-                "time": 1712489301678
+                "time": 1712679705546
             },
             {
                 "stepId": "STEP7",
                 "stepName": "Url: team",
                 "infFile": "t8.inf",
-                "time": 1712489301738
+                "time": 1712679705596
             },
             {
                 "stepId": "STEP8",
                 "stepName": "Url: teamContext",
                 "infFile": "t10.inf",
-                "time": 1712489301842
+                "time": 1712679705692
             },
             {
                 "stepId": "STEP9",
                 "stepName": "Url: testRunner",
                 "infFile": "t11.inf",
-                "time": 1712489301917
+                "time": 1712679705762
             },
             {
                 "stepId": "STEP10",
                 "stepName": "Custom Request: user_2",
                 "infFile": "t12.inf",
-                "time": 1712489302040
+                "time": 1712679705884
             },
             {
                 "stepId": "STEP11",
                 "stepName": "Custom Request: project",
                 "infFile": "t13.inf",
-                "time": 1712489302219
+                "time": 1712679706103
             }
         ],
         "transactions": [
             {
                 "transactionName": "UC02_TR_01_Login",
-                "rawStartTime": 1712489301080,
-                "rawEndTime": 1712489302052,
+                "rawStartTime": 1712679704970,
+                "rawEndTime": 1712679705898,
                 "thinkTime": 0.0,
-                "wastedTime": 0.041075944900512698
+                "wastedTime": 0.04081463813781738
             },
             {
                 "transactionName": "UC02_TR_02_Settings_thread",
-                "rawStartTime": 1712489302084,
-                "rawEndTime": 1712489302100,
+                "rawStartTime": 1712679705928,
+                "rawEndTime": 1712679705944,
                 "thinkTime": 0.0,
                 "wastedTime": 0.0
             },
             {
                 "transactionName": "UC02_TR_03_Load_SLA",
-                "rawStartTime": 1712489302116,
-                "rawEndTime": 1712489302228,
+                "rawStartTime": 1712679705959,
+                "rawEndTime": 1712679706115,
                 "thinkTime": 0.0,
-                "wastedTime": 0.004471302032470703
+                "wastedTime": 0.0037078857421875
             },
             {
                 "transactionName": "UC02_TR_04_Logout",
-                "rawStartTime": 1712489302260,
-                "rawEndTime": 1712489302276,
+                "rawStartTime": 1712679706147,
+                "rawEndTime": 1712679706163,
                 "thinkTime": 0.0,
                 "wastedTime": 0.0
             }

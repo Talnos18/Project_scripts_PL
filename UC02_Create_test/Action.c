@@ -1,6 +1,10 @@
 Action()
 {
-
+	
+	int totalDuration;
+	int totalDurationMs;
+    char totalDurationMsString[20];
+	
 	web_set_user("{user}", 
     "{pass}",
     "dev-boomq.pflb.ru:443");
@@ -233,7 +237,19 @@ Action()
 	lr_end_transaction("UC02_TR_02_Settings_thread",LR_AUTO);
 
 	lr_start_transaction("UC02_TR_03_Load_SLA");
+	
+	// Получаем значение параметра {totalDuration} как строку и преобразуем его в число
+    totalDuration = atoi(lr_eval_string("{totalDuration}"));
 
+    // Умножаем значение на 1000
+    totalDurationMs = totalDuration * 1000;
+
+    // Преобразуем результат обратно в строку
+    sprintf(totalDurationMsString, "%d", totalDurationMs);
+
+    // Сохраняем результат в переменную
+    lr_save_string(totalDurationMsString, "totalDurationMs");
+	
 	web_custom_request("project", 
 		"URL=https://dev-boomq.pflb.ru/project-srv/project", 
 		"Method=POST", 
@@ -244,12 +260,12 @@ Action()
 		"Snapshot=t11.inf", 
 		"Mode=HTML", 
 		"EncType=application/json", 
-		"Body={\"comment\":\"\",\"contentFormat\":\"yaml\",\"contentModelVersion\":\"2.0.0\",\"labelSet\":[],\"requestCount\":1,\"testType\":\"STABLE\",\"projectName\":\"{name_1_with_time}\",\"contentV2\":{\"boomqTestPlan\":{\"threadGroups\":[{\"boomqConfiguration\":{\"resourceConfiguration\":{},\"loadProfilePercent\":100},\"enabled\":true,\"id\":\"3b37ddbe-43c8-443d-9abb-b169553ab2b5\",\"label\":\"{name_1_with_time}\",\"steps\":[],\"type\":\"BOOMQ_STABLE_SCALABILITY\",\"typeDisplayName\":\"\",\"threadGroupElements"
+		"Body={\"comment\":\"\",\"contentFormat\":\"yaml\",\"contentModelVersion\":\"2.0.0\",\"labelSet\":[],\"requestCount\":1,\"testType\":\"STABLE\",\"projectName\":\"{name_1_with_time}\",\"contentV2\":{\"boomqTestPlan\":{\"threadGroups\":[{\"boomqConfiguration\":{\"resourceConfiguration\":{\"testRunnerIds\":[{loadGenerator}]},\"loadProfilePercent\":100},\"enabled\":true,\"id\":\"3b37ddbe-43c8-443d-9abb-b169553ab2b5\",\"label\":\"{name_1_with_time}\",\"steps\":[],\"type\":\"BOOMQ_STABLE_SCALABILITY\",\"typeDisplayName\":\"\",\"threadGroupElements"
 		"\":[{\"children\":[{\"children\":\"\",\"individualProperties\":{\"useKeepAlive\":true,\"type\":\"HTTP\",\"retrieveAllEmbeddedResources\":true,\"followRedirects\":true,\"automaticallyRedirect\":false,\"method\":\"GET\",\"browserCompatibleHeaders\":false,\"doMultipartPost\":false,\"path\":\"{path_mock}\",\"port\":\"{port_mock}\",\"protocol\":\"http\",\"search\":\"?\",\"serverName\":\"{host_mock}\",\"headers\":{},\"queryParameters\":[],\"body\":\"\",\"bodyParameters\":[]},\"timerList\":[{\""
 		"timerType\":\"CONSTANT\",\"label\":\"boomq_timer_d06b72f2-ca70-4d8c-9d37-fc6dedf62a40\",\"id\":\"d06b72f2-ca70-4d8c-9d37-fc6dedf62a40\",\"durationMs\":{durationMs},\"enabled\":true}],\"label\":\"{mock_ip}\",\"id\":\"ffc18113-4b5b-4481-9fb1-a4c41f3cbc98\",\"type\":\"SAMPLER\",\"enabled\":true,\"assertions\":[],\"extractors\":[],\"typeDisplayName\":\"HTTP Request\"}],\"individualProperties\":{\"includeDurationOfAllElementsToGeneratedSampler\":false,\"generateParentSampler"
 		"\":false,\"type\":\"TRANSACTION\"},\"timerList\":[],\"label\":\"Transaction 1\",\"id\":\"a4286aa8-2c02-402e-8b8c-b8b49c8bfd8a\",\"type\":\"CONTROLLER\",\"enabled\":true,\"creationIndex\":1,\"typeDisplayName\":\"Transaction Controller\"}]}],\"runThreadGroupConsecutively\":false,\"loadProfileType\":\"PER_TEST\",\"functionalMode\":false,\"runTearDownAfterShutdown\":true,\"configurationElements\":[{\"clearControlledByThreadGroup\":false,\"cookiePolicy\":\"STANDARD\",\"clearEachIteration\":false,\""
 		"userDefinedCookies\":[],\"label\":\"Http cookie manager\",\"id\":\"fe00c662-85c2-40d3-9f2c-5600fee1a354\",\"type\":\"HTTP_COOKIE_MANAGER\",\"enabled\":true},{\"headers\":{\"User-Agent\":\"Mozilla/5.0\"},\"label\":\"Http header manager\",\"id\":\"ba538c93-08ea-4a3f-af4a-2f432e5f4ecd\",\"type\":\"HTTP_HEADER_MANAGER\",\"enabled\":true},{\"label\":\"Http request defaults\",\"type\":\"HTTP_REQUEST_DEFAULTS\",\"enabled\":true,\"id\":\"949c24fa-3f28-4aa2-96a0-3c9ce5fbf28c\",\"connectTimeout\":60000,\""
-		"responseTimeout\":120000}],\"loadProfile\":{\"usersPerStep\":{usersPerStep},\"rampDownMs\":{rampDownMs},\"durationAddedOnLastStepMs\":{durationAddedOnLastStepMs},\"boomqProfileType\":\"STABLE\",\"rampUpMs\":{rampUpMs},\"stepLengthMs\":300000,\"stepCount\":{stepCount}},\"timers\":[{\"timerType\":\"CONSTANT\",\"label\":\"boomq_timer_e6c295d9-bb7b-448f-addf-87e0bd6ee4ab\",\"id\":\"e6c295d9-bb7b-448f-addf-87e0bd6ee4ab\",\"durationMs\":8000,\"enabled\":true}]},\"slaGroupList\":[{\"type\":\"GENERAL_TEST_SLA\",\"targetType\":\"TEST\",\"slaList\":[{\"fromDate\":0,\""
+		"responseTimeout\":120000}],\"loadProfile\":{\"usersPerStep\":{usersPerStep},\"rampDownMs\":{rampDownMs},\"durationAddedOnLastStepMs\":{durationAddedOnLastStepMs},\"boomqProfileType\":\"STABLE\",\"rampUpMs\":{rampUpMs},\"stepLengthMs\":{totalDurationMs},\"stepCount\":{stepCount}},\"timers\":[{\"timerType\":\"CONSTANT\",\"label\":\"boomq_timer_e6c295d9-bb7b-448f-addf-87e0bd6ee4ab\",\"id\":\"e6c295d9-bb7b-448f-addf-87e0bd6ee4ab\",\"durationMs\":8000,\"enabled\":true}]},\"slaGroupList\":[{\"type\":\"GENERAL_TEST_SLA\",\"targetType\":\"TEST\",\"slaList\":[{\"fromDate\":0,\""
 		"restrictionType\":\"AVERAGE\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_response}\"},{\"fromDate\":0,\"restrictionType\":\"ERROR_RATE\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_error}\"},{\"fromDate\":0,\"restrictionType\":\"THROUGHPUT\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_request}\"}]}],\"supportingFiles\":[],\"supportingFilesV2\":[]},\"totalDuration\":{totalDuration}}", 
 		EXTRARES, 
 		"Url=../static/media/check.9725c0396328bae9471b624111fc14ca.svg", "Referer=https://dev-boomq.pflb.ru/account/new-test", ENDITEM, 
@@ -264,13 +280,13 @@ Action()
 		"Referer=https://dev-boomq.pflb.ru/account/new-test", 
 		"Snapshot=t12.inf", 
 		"Mode=HTML", 
-		"Body={\"comment\":\"\",\"contentFormat\":\"yaml\",\"contentModelVersion\":\"2.0.0\",\"labelSet\":[],\"requestCount\":1,\"testType\":\"STABLE\",\"projectName\":\"{name_1}9\",\"contentV2\":{\"boomqTestPlan\":{\"threadGroups\":[{\"boomqConfiguration\":{\"resourceConfiguration\":{},\"loadProfilePercent\":100},\"enabled\":true,\"id\":\"3b37ddbe-43c8-443d-9abb-b169553ab2b5\",\"label\":\"{name_1}9\",\"steps\":[],\"type\":\"BOOMQ_STABLE_SCALABILITY\",\"typeDisplayName\":\"\",\"threadGroupElements"
+		"Body={\"comment\":\"\",\"contentFormat\":\"yaml\",\"contentModelVersion\":\"2.0.0\",\"labelSet\":[],\"requestCount\":1,\"testType\":\"STABLE\",\"projectName\":\"{name_1}\",\"contentV2\":{\"boomqTestPlan\":{\"threadGroups\":[{\"boomqConfiguration\":{\"resourceConfiguration\":{},\"loadProfilePercent\":100},\"enabled\":true,\"id\":\"3b37ddbe-43c8-443d-9abb-b169553ab2b5\",\"label\":\"{name_1}\",\"steps\":[],\"type\":\"BOOMQ_STABLE_SCALABILITY\",\"typeDisplayName\":\"\",\"threadGroupElements"
 		"\":[{\"children\":[{\"children\":\"\",\"individualProperties\":{\"useKeepAlive\":true,\"type\":\"HTTP\",\"retrieveAllEmbeddedResources\":true,\"followRedirects\":true,\"automaticallyRedirect\":false,\"method\":\"GET\",\"browserCompatibleHeaders\":false,\"doMultipartPost\":false,\"path\":\"{path_mock}\",\"port\":\"{port_mock}\",\"protocol\":\"http\",\"search\":\"?\",\"serverName\":\"{host_mock}\",\"headers\":{},\"queryParameters\":[],\"body\":\"\",\"bodyParameters\":[]},\"timerList\":[{\""
 		"timerType\":\"CONSTANT\",\"label\":\"boomq_timer_d06b72f2-ca70-4d8c-9d37-fc6dedf62a40\",\"id\":\"d06b72f2-ca70-4d8c-9d37-fc6dedf62a40\",\"durationMs\":{durationMs},\"enabled\":true}],\"label\":\"{mock_ip}\",\"id\":\"ffc18113-4b5b-4481-9fb1-a4c41f3cbc98\",\"type\":\"SAMPLER\",\"enabled\":true,\"assertions\":[],\"extractors\":[],\"typeDisplayName\":\"HTTP Request\"}],\"individualProperties\":{\"includeDurationOfAllElementsToGeneratedSampler\":false,\"generateParentSampler"
 		"\":false,\"type\":\"TRANSACTION\"},\"timerList\":[],\"label\":\"Transaction 1\",\"id\":\"a4286aa8-2c02-402e-8b8c-b8b49c8bfd8a\",\"type\":\"CONTROLLER\",\"enabled\":true,\"creationIndex\":1,\"typeDisplayName\":\"Transaction Controller\"}]}],\"runThreadGroupConsecutively\":false,\"loadProfileType\":\"PER_TEST\",\"functionalMode\":false,\"runTearDownAfterShutdown\":true,\"configurationElements\":[{\"clearControlledByThreadGroup\":false,\"cookiePolicy\":\"STANDARD\",\"clearEachIteration\":false,\""
 		"userDefinedCookies\":[],\"label\":\"Http cookie manager\",\"id\":\"10c9f8a9-dbf2-4ec5-8e14-1bfe1fd96412\",\"type\":\"HTTP_COOKIE_MANAGER\",\"enabled\":true},{\"headers\":{\"User-Agent\":\"Mozilla/5.0\"},\"label\":\"Http header manager\",\"id\":\"684e2840-673c-470b-8884-dba347334119\",\"type\":\"HTTP_HEADER_MANAGER\",\"enabled\":true},{\"label\":\"Http request defaults\",\"type\":\"HTTP_REQUEST_DEFAULTS\",\"enabled\":true,\"id\":\"87f90112-4ead-42cc-82ea-b2c089d182df\",\"connectTimeout\":60000,\""
 		"responseTimeout\":120000}],\"loadProfile\":{\"usersPerStep\":{usersPerStep},\"rampDownMs\":{rampDownMs},\"durationAddedOnLastStepMs\":{durationAddedOnLastStepMs},\"boomqProfileType\":\"STABLE\",\"rampUpMs\":{rampUpMs},\"stepLengthMs\":300000,\"stepCount\":{stepCount}},\"timers\":[{\"timerType\":\"CONSTANT\",\"label\":\"boomq_timer_6fc7147e-35c4-46fa-841a-ef2f6522f249\",\"id\":\"6fc7147e-35c4-46fa-841a-ef2f6522f249\",\"durationMs\":8000,\"enabled\":true}]},\"slaGroupList\":[{\"type\":\"GENERAL_TEST_SLA\",\"targetType\":\"TEST\",\"slaList\":[{\"fromDate\":0,\""
-		"restrictionType\":\"AVERAGE\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_response}\"},{\"fromDate\":0,\"restrictionType\":\"ERROR_RATE\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_error}\"},{\"fromDate\":0,\"restrictionType\":\"THROUGHPUT\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_request}\"}]}],\"supportingFiles\":[],\"supportingFilesV2\":[]},\"totalDuration\":300}", 
+		"restrictionType\":\"AVERAGE\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_response}\"},{\"fromDate\":0,\"restrictionType\":\"ERROR_RATE\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_error}\"},{\"fromDate\":0,\"restrictionType\":\"THROUGHPUT\",\"operation\":\"LESS_EQUALS\",\"status\":\"NOT_COUNTED\",\"toDate\":720,\"value\":\"{SLA_request}\"}]}],\"supportingFiles\":[],\"supportingFilesV2\":[]},\"totalDuration\":{totalDuration}}", 
 		LAST);
 */
 	lr_end_transaction("UC02_TR_03_Load_SLA",LR_AUTO);
