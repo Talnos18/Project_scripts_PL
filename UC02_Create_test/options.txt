@@ -2,8 +2,8 @@
 -DCCI
 -D_IDA_XL
 -DWINNT
--IC:\Users\Илья\Documents\SharpDevelop Projects\UC02_Create_test
+-IC:\Users\Ilya\Documents\GitHub\project_boomq1izh\LoadRunnerScripts\UC02_Create_test
 -IC:\Program Files (x86)\Micro Focus\LoadRunner\include
--ec:\users\илья\documents\sharpdevelop projects\uc02_create_test\\logfile.log
-c:\users\илья\documents\sharpdevelop projects\uc02_create_test\\combined_UC02_Create_test.c
-c:\users\илья\documents\sharpdevelop projects\uc02_create_test\\pre_cci.c
+-ec:\users\ilya\documents\github\project_boomq1izh\loadrunnerscripts\uc02_create_test\\logfile.log
+c:\users\ilya\documents\github\project_boomq1izh\loadrunnerscripts\uc02_create_test\\combined_UC02_Create_test.c
+c:\users\ilya\documents\github\project_boomq1izh\loadrunnerscripts\uc02_create_test\\pre_cci.c

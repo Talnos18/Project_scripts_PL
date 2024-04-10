@@ -57,8 +57,8 @@ Order="UC_01_TR_01_Login__*delimiter*__UC_01_TR_02_Team_choose__*delimiter*__UC_
 [StateManagement]
 LastReplayStatus=1
 [ActiveReplay]
-LastReplayedRunName=result1
-ActiveRunName=result1
+LastReplayedRunName=
+ActiveRunName=
 [Transactions]
 UC_01_TR_01_Login=
 UC_01_TR_02_Team_choose=

@@ -52,6 +52,8 @@ Action()
 		LAST);
 
 	/*Connection ID 1 received buffer WebSocketReceive0*/
+	
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_01_Login");
 
@@ -213,7 +215,7 @@ Action()
 
 	lr_end_transaction("UC_01_TR_01_Login",LR_AUTO);
 
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_02_Team_choose");
 	
@@ -255,7 +257,7 @@ Action()
 
 	lr_end_transaction("UC_01_TR_03_Team_edit",LR_AUTO);
 	
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_04_Add_user");
 
@@ -306,7 +308,7 @@ Action()
 
 	lr_end_transaction("UC_01_TR_04_Add_user",LR_AUTO);
 
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_05_Search_user_link_pass");
 	
@@ -337,7 +339,7 @@ Action()
 
 	lr_end_transaction("UC_01_TR_05_Search_user_link_pass",LR_AUTO);
 	
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_06_Logout");
 	
@@ -386,7 +388,7 @@ Action()
 
 	lr_end_transaction("UC_01_TR_07_Follow_link_pass",LR_AUTO);
 	
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_08_Set_pass");
 
@@ -458,7 +460,7 @@ Action()
 
 	lr_end_transaction("UC_01_TR_08_Set_pass",LR_AUTO);
 	
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC_01_TR_09_Logout_new_user");
 	

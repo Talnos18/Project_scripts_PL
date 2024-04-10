@@ -1,4 +1,4 @@
-# 1 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c"
+# 1 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c"
 # 1 "C:\\Program Files (x86)\\Micro Focus\\LoadRunner\\include/lrun.h" 1
  
  
@@ -968,7 +968,7 @@ int lr_db_getvalue(char * pFirstArg, ...);
 
 
 
-# 1 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
+# 1 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
 
 # 1 "C:\\Program Files (x86)\\Micro Focus\\LoadRunner\\include/SharedParameter.h" 1
 
@@ -1136,7 +1136,7 @@ extern VTCERR2  lrvtc_noop();
 
 
 
-# 2 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
+# 2 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
 
 # 1 "globals.h" 1
 
@@ -2606,14 +2606,14 @@ long WebSocketReceiveLen0   = sizeof(WebSocketReceive0) - 1;
  
 
 
-# 3 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
+# 3 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
 
 # 1 "vuser_init.c" 1
 vuser_init()
 {
 	return 0;
 }
-# 4 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
+# 4 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
 
 # 1 "Action.c" 1
 Action()
@@ -2904,12 +2904,12 @@ Action()
 
 	return 0;
 }
-# 5 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
+# 5 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
 
 # 1 "vuser_end.c" 1
 vuser_end()
 {
 	return 0;
 }
-# 6 "c:\\users\\\350\353\374\377\\documents\\sharpdevelop projects\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
+# 6 "c:\\users\\ilya\\documents\\github\\project_boomq1izh\\loadrunnerscripts\\uc02_create_test\\\\combined_UC02_Create_test.c" 2
 

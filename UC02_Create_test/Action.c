@@ -57,6 +57,8 @@ Action()
 		LAST);
 
 	/*Connection ID 1 received buffer WebSocketReceive0*/
+	
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC02_TR_01_Login");
 
@@ -229,12 +231,12 @@ Action()
 		LAST);
 
 	lr_end_transaction("UC02_TR_01_Login",LR_AUTO);
-	
-	lr_think_time(2);
 
 	lr_start_transaction("UC02_TR_02_Settings_thread");
 
 	lr_end_transaction("UC02_TR_02_Settings_thread",LR_AUTO);
+	
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC02_TR_03_Load_SLA");
 	
@@ -291,7 +293,7 @@ Action()
 */
 	lr_end_transaction("UC02_TR_03_Load_SLA",LR_AUTO);
 	
-	lr_think_time(2);
+	lr_think_time(atoi(lr_eval_string("{thinkTimeSeconds}")));
 
 	lr_start_transaction("UC02_TR_04_Logout");
 /*	

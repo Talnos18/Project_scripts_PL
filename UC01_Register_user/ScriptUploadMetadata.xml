@@ -17,6 +17,7 @@
     <FileEntry Name="NewParam.dat" Filter="2" />
     <FileEntry Name="NewParam_1.dat" Filter="2" />
     <FileEntry Name="NewParam_4.dat" Filter="2" />
+    <FileEntry Name="thinkTimeSeconds.dat" Filter="2" />
     <FileEntry Name="NewParam_3.dat" Filter="2" />
     <FileEntry Name="user.dat" Filter="2" />
     <FileEntry Name="combined_UC01_Register_user.c" Filter="2" />
@@ -138,11 +139,6 @@
     <FileEntry Name="Bookmarks.xml" Filter="1" />
     <FileEntry Name="Breakpoints.xml" Filter="1" />
     <FileEntry Name="CompilerLogMetadata.xml" Filter="1" />
-    <FileEntry Name="data.zip" Filter="1" />
-    <FileEntry Name="logfile.log" Filter="1" />
-    <FileEntry Name="mdrv.log" Filter="1" />
-    <FileEntry Name="mdrvJ1k.841.log" Filter="1" />
-    <FileEntry Name="mdrvPEj.157.log" Filter="1" />
     <FileEntry Name="mdrv_cmd.txt" Filter="1" />
     <FileEntry Name="options.txt" Filter="1" />
     <FileEntry Name="output.bak" Filter="1" />
@@ -156,7 +152,5 @@
     <FileEntry Name="UC01_Register_user.prm.bak" Filter="1" />
     <FileEntry Name="UC_01_New_user_reg.prm.bak" Filter="1" />
     <FileEntry Name="UserTasks.xml" Filter="1" />
-    <FileEntry Name="data\" Filter="1" />
-    <FileEntry Name="result1\" Filter="1" />
   </GeneralFiles>
 </VugenScriptMetadata>
